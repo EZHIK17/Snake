@@ -9,18 +9,16 @@ root.mainloop()
 class Snake(object):
     def __init__(self, segments):
         self.segments = segments
-elf.mapping = {'Down': (0, 1), 'Up': (0, -1),'Left': (-1, 0), 'Right': (1, 0) }
-
-self.vector = self.mapping['Right']
+        self.mapping = {'Down': (0, 1), 'Up': (0, -1),'Left': (-1, 0), 'Right': (1, 0) }
+        self.vector = self.mapping['Right']
 def move(self):
-       if index in range(len(self.segments)-1):
+       for index in range(len(self.segments)-1):
          segment = self.segments[index].instace
          x1, y1, x2, y2 = c.coords(self.segments[index+1].insance)
-
          c.coords(self, x1, y1, x2, y2)
        x1, y1, x2, y2 = c.coords(self.segments[-2].instance)
        c.coords(self.segments[-1].instance,
-                x1 + self.vector[0]*SEG_SIZE,
+                x1 + self.vector[0] * SEG_SIZE,
                 y1 + self.vector[1] * SEG_SIZE,
                 x2 + self.vector[0] * SEG_SIZE,
                 y2 + self.vector[1] * SEG_SIZE)
